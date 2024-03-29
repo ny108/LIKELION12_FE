@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML5 Basic Page</title>
+    <style>
+      * {
+        font-family: "맑은 고딕", Gothic, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 960px;
+        margin: 0 auto;
+      }
+      #page-wrapper {
+        padding: 10px 20px;
+        margin-top: 40px;
+      }
+      #main-header {
+        padding: 40px 50px;
+      }
+
+      #main-navigation {
+        height: 40px;
+        margin-bottom: 20px;
+        border-top: 1px solid #c9c9c9;
+        border-bottom: 1px solid #c9c9c9;
+      }
+
+      .outer-menu-item {
+        display: block;
+        text-align: center;
+        height: 30px;
+        width: 80px;
+        padding: 5px 20px;
+        line-height: 30px;
+        float: left;
+      }
+      .outer-menu-item:hover {
+        background-color: black;
+        color: white;
+      }
+      .pull-left {
+        height: 40px;
+        float: left;
+      }
+      .pull-right {
+        height: 26px;
+        padding: 7px;
+        float: right;
+      }
+      .input-search-submit {
+        display: block;
+        height: 26px;
+        width: 50px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #cccccc;
+        border-radius: 0 15px 15px 0;
+        float: right;
+      }
+
+      .input-search {
+        display: block;
+        height: 24px;
+        width: 120px;
+        padding-left: 10px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #cccccc;
+        border-radius: 15px 0 0 15px;
+        float: right;
+      }
+
+      .input-search:focus {
+        background-color: yellow;
+        outline: 0;
+      }
+      #main-section {
+        width: 710px;
+        float: left;
+      }
+      #main-aside {
+        width: 200px;
+        float: right;
+      }
+      #content {
+        overflow: hidden;
+      }
+
+      a:link {
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+      body {
+        background-color: #e6e6e6;
+      }
+      #page-wrapper {
+        background-color: white;
+      }
+      article {
+        padding: 0 10px 20px 10px;
+        border-bottom: 1px solid #c9c9c9;
+      }
+      .article-header {
+        padding: 20px 0;
+      }
+
+      .master-title {
+        color: #191919;
+        font-size: 30px;
+      }
+      .master-description {
+        color: #383838;
+        font-size: 15px;
+      }
+      .article-title {
+        font-size: 25px;
+      }
+      .article-date {
+        font-size: 13px;
+      }
+      .article-body {
+        font-size: 14px;
+      }
+      .aside-list li a {
+        color: orange;
+        font-size: 13px;
+      }
+      .aside-list > h3 {
+        color: blue;
+        font-size: 15px;
+      }
+
+      nav li:hover {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-wrapper">
+      <header id="main-header">
+        <h1 class="master-title">웹 프로그래밍 완전 정복</h1>
+        <h2 class="master-description">건국대학교 컴퓨터공학부</h2>
+      </header>
+      <nav id="main-navigation">
+        <div class="pull-left">
+          <ul class="outer-menu">
+            <li class="outer-menu-item">HTML5</li>
+            <li class="outer-menu-item">CSS3</li>
+            <li class="outer-menu-item">JavaScript</li>
+          </ul>
+        </div>
+        <div class="pull-right">
+          <form>
+            <input type="submit" class="input-search-submit" value="검색" />
+            <input type="text" class="input-search" />
+          </form>
+        </div>
+      </nav>
+      <div id="content">
+        <section id="main-section">
+          <article>
+            <div class="article-header">
+              <h1 class="article-title">HTML5 개요와 활용</h1>
+              <p class="article-date">2023년 3월 14일</p>
+            </div>
+            <div class="article-body">
+              <img src="430x280.png" />
+              <p>
+                hello. this is article this is article this is article this is
+                article this is article this is article this is article this is
+                article this is article this is articlethis is article this is
+                article this is articlethis is articlethis is articlethis is
+                articlethis is article this is article this is article
+              </p>
+            </div>
+          </article>
+          <article>
+            <div class="article-header">
+              <h1 class="article-title">HTML5 응용과 실습</h1>
+              <p class="article-date">2023년 3월 14일</p>
+            </div>
+            <div class="article-body">
+              <img src="430x280.png" />
+              <p>
+                hello. this is article this is article this is article this is
+                article this is article this is article this is article this is
+                article this is article this is articlethis is article this is
+                articlethis is article this is articlethis is article this is
+                article this is article this is article this is article
+              </p>
+            </div>
+          </article>
+        </section>
+        <aside id="main-aside">
+          <div class="aside-list">
+            <h3>카테고리</h3>
+            <ul>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+            </ul>
+          </div>
+          <div class="aside-list">
+            <h3>최근 글</h3>
+            <ul>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+              <li><a href="#">데이터</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+      <footer id="main-footer">
+        <a href="#">Created By Nayoung Kim</a>
+      </footer>
+    </div>
+  </body>
+</html>

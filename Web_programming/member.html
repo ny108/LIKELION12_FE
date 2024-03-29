@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td,
+      tr {
+        width: 100px;
+      }
+    </style>
+
+    <h1>회원가입</h1>
+    <form action="input.jsp" method="post" name="myform">
+      <table>
+        <tr>
+          <td>아이디:</td>
+          <td style="width: 500px">
+            <input type="text" name="id" size="15" maxlength="12" /><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>이름:</td>
+          <td>
+            <input type="text" name="name" size="15" maxlength="12" /><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>비밀번호:</td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              size="15"
+              maxlength="10"
+            /><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>성별:</td>
+          <td>
+            <input type="radio" name="gender" value="male" checked />남성
+            <input type="radio" name="gender" value="female" />여성
+          </td>
+        </tr>
+
+        <tr>
+          <td>휴대전화:</td>
+          <td>
+            <select name="phone1">
+              <option value="010">010</option>
+              <option value="010">011</option>
+              <option value="010">016</option>
+              <option value="010">017</option>
+              <option value="010">070</option>
+            </select>
+            <input type="text" name="phone2" size="4" maxlength="4" />
+            <input type="text" name="phone3" size="4" maxlength="4" />
+          </td>
+        </tr>
+
+        <tr>
+          <td>주소:</td>
+          <td>
+            <input type="text" name="address" size="50" maxlength="40" /><br />
+          </td>
+        </tr>
+
+        <tr>
+          <td>취미:</td>
+          <td>
+            <input
+              type="checkbox"
+              name="hobby1"
+              value="music"
+              checked
+            />음악감상 <input type="checkbox" name="hobby2" value="book" />독서
+            <input type="checkbox" name="hobby3" value="shopping" />쇼핑
+            <input type="checkbox" name="hobby4" value="exercise" />운동
+          </td>
+        </tr>
+
+        <tr>
+          <td>자기소개:</td>
+          <td>
+            <textarea name="self-introduce" rows="5" cols="60"></textarea>
+          </td>
+        </tr>
+      </table>
+
+      <input type="button" value="회원가입" onclick="show();" />
+      <input type="reset" value="다시작성" />
+    </form>
+
+    <script>
+      function show() {
+        var form = document.myform;
+        var id = form["id"].value; // name 속성 값이 id 인 객체
+        var name = form["name"].value;
+        var gender = form["gender"].value;
+        var cell =
+          form["phone1"].value + form["phone2"].value + form["phone3"].value;
+        var address = form["address"].value;
+        var hobby = "";
+        for (var i = 1; i <= 4; i++) {
+          if (form["hobby" + i].checked) hobby += form["hobby" + i].value + " ";
+          var str = id + "\n" + name + "\n" + gender + "\n";
+          str += cell + "\n" + address + "\n" + hobby;
+          alert(str);
+        }
+      }
+    </script>
+  </body>
+</html>
