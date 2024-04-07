@@ -73,6 +73,12 @@ footer p {
 }
 .lab {
   padding: 10px;
-  border: 1px slid black;
+  border: 1px solid black;
   margin-top: 10px;
+}
+table {
+  text-align: center;
+}
+tr:nth-of-type(1) {
+  background-color: gray;
 }

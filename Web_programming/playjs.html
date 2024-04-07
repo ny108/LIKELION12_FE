@@ -39,6 +39,50 @@
           <input type="button" value="계산" onclick="calc();" />
         </form>
       </div>
+      <div class="lab">
+        <h3>구구단표</h3>
+        <table border="1">
+          <tr>
+            <td>2단</td>
+            <td>3단</td>
+            <td>4단</td>
+            <td>5단</td>
+            <td>6단</td>
+            <td>7단</td>
+            <td>8단</td>
+            <td>9단</td>
+          </tr>
+          <script>
+            for (var i = 1; i < 10; i++) {
+              document.write("<tr>");
+              for (var j = 2; j < 10; j++) {
+                document.write("<td>" + j + "X" + i + "=" + j * i + "</td>");
+              }
+              document.write("<tr>");
+            }
+          </script>
+        </table>
+      </div>
+      <div class="lab">
+        <h3>숫자 맞추기 게임</h3>
+        <p>
+          이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br />
+          숫자는 1부터 100사이에 있습니다.
+        </p>
+        <br />
+        <form>
+          숫자:
+          <input type="text" id="user" size="5" />
+          <input type="button" value="확인" onclick="Guess();" />
+          <input type="button" value="다시시작" onclick="replay();" />
+          <br /><br />
+          추측횟수:
+          <input type="text" id="guess" size="5" />
+          힌트:
+          <input type="text" id="result" size="16" />
+          <input type="text" id="random" size="16" />
+        </form>
+      </div>
     </div>
     <footer>
       <p>Web Programming, Spring 2024</p>
