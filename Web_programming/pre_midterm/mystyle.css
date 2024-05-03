@@ -1,0 +1,118 @@
+/*202111248 김나영*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-style: serif;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img {
+  border: none;
+}
+
+#title {
+  font-family: Indie Flower;
+  font-size: 35px;
+  text-align: center;
+  line-height: 150px;
+  height: 150px;
+  padding-top: 50px;
+}
+
+header {
+  height: 800px;
+  background-color: #fff2c6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+nav {
+  width: 720px;
+  height: 50px;
+  margin: 0 auto;
+  margin-top: 550px;
+  background-color: #e5a840;
+}
+
+section {
+  width: 720px;
+  margin: 800px auto 0 auto;
+}
+
+#content {
+  height: 800px;
+  padding: 50px;
+  background-color: #dcefac;
+}
+
+footer {
+  height: 100px;
+  background-color: #c6e8f2;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+
+.menu {
+  display: block;
+  width: 100px;
+  height: 50px;
+  margin: 0 70px;
+  text-align: center;
+  line-height: 50px;
+  float: left;
+  color: #8106ce;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+input {
+  display: none;
+}
+
+.story {
+  display: none;
+  height: 700px;
+  padding: 20px;
+  border: 1px dotted black;
+  border-radius: 15px;
+}
+
+header:has(input:nth-of-type(1):checked)
+  + section
+  #content
+  .story:nth-of-type(1) {
+  display: block;
+}
+
+header:has(input:nth-of-type(2):checked)
+  + section
+  #content
+  .story:nth-of-type(2) {
+  display: block;
+}
+
+header:has(input:nth-of-type(3):checked)
+  + section
+  #content
+  .story:nth-of-type(3) {
+  display: block;
+}
+
+.colorDiv {
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold;
+}

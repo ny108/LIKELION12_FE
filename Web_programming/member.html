@@ -107,6 +107,7 @@
         var id = form["id"].value; // name 속성 값이 id 인 객체
         var name = form["name"].value;
         var gender = form["gender"].value;
+        var password = form["password"].value;
         var cell =
           form["phone1"].value + form["phone2"].value + form["phone3"].value;
         var address = form["address"].value;
@@ -117,6 +118,52 @@
           str += cell + "\n" + address + "\n" + hobby;
           alert(str);
         }
+        if (id.value.length == 0) {
+          alert("아이디가 입력되지 않았습니다.");
+          id.focus();
+          return false;
+        } else {
+          if (id.value.length < 6) {
+            alert("아이디는 6자리 이상이여야 합니다.");
+            id.focus();
+            return false;
+          }
+        }
+        if (name.value.length == 0) {
+          alert("이름이 입력되지 않았습니다.");
+          name.focus();
+          return false;
+        }
+        if (password.value.length == 0) {
+          alert("비밀번호가 입력되지 않았습니다.");
+          password.focus();
+          return false;
+        } else {
+          if (password.value < 6) {
+            alert("비밀번호는 6자리 이상이여야 합니다.");
+            password.focus();
+            return false;
+          }
+        }
+      }
+      function check_passwd(str) {
+        var exp1 = /[0-9]+/; //숫자가 있는지 없는지
+        var exp2 = /[a-zA-Z]+/;
+        var exp3 = /[$@#]+/;
+        var exp4 = /[`~!%^&*|\\\'\";:\/?]+/;
+        if (!exp1.test(str)) {
+          alert("숫자를 포함하여야합니다.");
+          return false;
+        } else if (!exp2.test(str)) {
+          alert("문자를 포함하여야합니다.");
+          return false;
+        } else if (!exp3.test(str)) {
+          alert("특수문자[$#@] 중 하나를 포함하여야합니다.");
+          return false;
+        } else if (!exp4.test(str)) {
+          alert("사용할 수 없는 특수문자[$#@]를 입력했습니다.");
+          return false;
+        } else return true;
       }
     </script>
   </body>

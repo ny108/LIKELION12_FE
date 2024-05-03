@@ -28,7 +28,7 @@ img {
   width: 25px; /* 꽃잎의 너비 */
   height: 45px; /* 꽃잎의 높이 */
   background: pink; /* 꽃잎의 색상 */
-  border-radius: 50%; /* 꽃잎을 둥글게 만듭니다 */
+  border-radius: 50%; /* 꽃잎을 둥글게 */
   animation: fall1 7s cubic-bezier(0.25, 0.15, 0.81, 0.94) infinite 5s; /* fall 애니메이션 적용 */
 }
 .blossom2 {
@@ -37,7 +37,7 @@ img {
   width: 20px; /* 꽃잎의 너비 */
   height: 40px; /* 꽃잎의 높이 */
   background: pink; /* 꽃잎의 색상 */
-  border-radius: 50%; /* 꽃잎을 둥글게 만듭니다 */
+  border-radius: 50%; /* 꽃잎을 둥글게 */
   animation: fall1 10s cubic-bezier(0.25, 0.15, 0.81, 0.94) infinite 4s; /* fall 애니메이션 적용 */
 }
 .blossom3 {
@@ -46,7 +46,7 @@ img {
   width: 15px; /* 꽃잎의 너비 */
   height: 25px; /* 꽃잎의 높이 */
   background: pink; /* 꽃잎의 색상 */
-  border-radius: 50%; /* 꽃잎을 둥글게 만듭니다 */
+  border-radius: 50%; /* 꽃잎을 둥글게 */
   animation: fall2 8s cubic-bezier(0.25, 0.15, 0.81, 0.94) infinite 7s; /* fall 애니메이션 적용 */
 }
 .blossom4 {
@@ -55,7 +55,7 @@ img {
   width: 10px; /* 꽃잎의 너비 */
   height: 40px; /* 꽃잎의 높이 */
   background: pink; /* 꽃잎의 색상 */
-  border-radius: 50%; /* 꽃잎을 둥글게 만듭니다 */
+  border-radius: 50%; /* 꽃잎을 둥글게 */
   animation: fall2 6s cubic-bezier(0.25, 0.15, 0.81, 0.94) infinite 4s; /* fall 애니메이션 적용 */
 }
 .blossom5 {
@@ -64,7 +64,7 @@ img {
   width: 20px; /* 꽃잎의 너비 */
   height: 50px; /* 꽃잎의 높이 */
   background: pink; /* 꽃잎의 색상 */
-  border-radius: 50%; /* 꽃잎을 둥글게 만듭니다 */
+  border-radius: 50%; /* 꽃잎을 둥글게 */
   animation: fall2 9s cubic-bezier(0.25, 0.15, 0.81, 0.94) infinite 3s; /* fall 애니메이션 적용 */
 }
 
@@ -93,30 +93,29 @@ img {
     opacity: 0.2;
     transform: translateX(0px) translateY(400px) rotate(480deg); /* 끝 위치와 각도 */
   }
-}
-/*여기까지가 벚꽃 애니메이션 코드*/
+} /*여기까지가 벚꽃 애니메이션 코드*/
+
 #out-line {
   width: 1600px;
 }
-#out-line > label {
-  position: fixed;
-  top: 62%;
-  right: 10.6%;
-  z-index: 3;
-}
-#out-line > label > img {
+
+#out-line > p > label > img {
   width: 40px;
+  opacity: 1;
 }
 #out-line > p {
   width: 60px;
   height: 80px;
-  background-color: rgb(173, 249, 245);
-  border: solid 2px rgb(136, 220, 210);
-  opacity: 0.3;
+  background-color: rgba(173, 249, 245, 0.5);
+  border: solid 2px rgb(136, 220, 210, 0.5);
   position: fixed;
   top: 60%;
   right: 10%;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
 }
 #page-wrapper {
   overflow: hidden;
@@ -242,6 +241,11 @@ nav {
   border: none;
   opacity: 1;
 }
+.tab-title label img:hover {
+  filter: drop-shadow(3px 3px 3px gray);
+  transition: filter 0.2s ease-out;
+  cursor: pointer;
+}
 .tab-title img {
   width: 100px;
   height: 100px;
@@ -261,8 +265,8 @@ input {
   display: none;
 }
 #out-line > input:hover ~ p {
-  background-color: blueviolet;
-  transition: background-color 0.3s ease-out;
+  background-color: rgba(138, 43, 226, 0.2);
+  transition: background-color 0.2s ease-out;
 }
 nav input:nth-of-type(1):checked ~ section.tab-title label img {
   opacity: 0.2;
@@ -304,12 +308,17 @@ nav input:nth-of-type(4):checked ~ section.tab-title > img:nth-of-type(4) {
 
 #content {
   width: 1200px;
-  height: 1000px;
+  min-height: 1200px;
   background-color: white;
+  border-radius: 20px;
+  padding-bottom: 150px;
 }
 
 #content,
-#content div {
+#content div.tab-me,
+#content div.tab-friend,
+#content div.tab-street,
+#content div.tab-inf {
   display: none;
 }
 
@@ -328,4 +337,402 @@ nav input:nth-of-type(4):checked ~ section.tab-title > img:nth-of-type(4) {
 #main-header:has(#about-inf:checked) + #content .tab-inf,
 #main-header:has(#about-inf:checked) + #content {
   display: block;
+}
+.tab-me table {
+  text-align: center;
+  border-collapse: collapse;
+  width: 900px;
+  border-color: #c9c9c9;
+}
+.tab-me table th {
+  background-color: rgba(245, 245, 220, 0.6);
+  line-height: 50px;
+  color: rgb(59, 59, 55);
+}
+.tab-me table td {
+  background-color: white;
+  line-height: 50px;
+}
+.tab-me {
+  margin: 0 150px;
+  padding: 0px 0;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+#nybox {
+  width: 800px;
+  height: 110px;
+  margin-left: 50px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border-radius: 20px;
+  line-height: 100px;
+  color: rgb(158, 158, 158);
+  font-family: "Lily Script One", system-ui;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 40px;
+
+  background-color: rgba(245, 245, 220, 0.6);
+}
+
+#mybox {
+  background-color: rgba(245, 245, 220, 0.6);
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.tab-me #mybox img {
+  width: 500px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tab-me h2 {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 170, 0.5),
+    rgba(176, 255, 176, 0.5)
+  );
+  border-radius: 0 0 20px 20px;
+  line-height: 70px;
+}
+.tab-friend {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.tab-friend #fdbox {
+  display: flex;
+  flex-wrap: wrap;
+}
+#fdbox aside {
+  border-radius: 0 5px 5px 0;
+  margin-top: 50px;
+  padding: 20px 15px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  color: rgba(182, 177, 177, 0.7);
+  background-color: rgba(255, 228, 196, 0.5);
+  align-content: center;
+}
+#intro,
+#qa20 {
+  display: none;
+}
+#fdbox:has(#intro-tab:checked) #intro {
+  display: block;
+}
+#fdbox:has(#intro-tab:hover) label:nth-of-type(1),
+#fdbox:has(#intro-tab:checked) label:nth-of-type(1) {
+  font-weight: bold;
+  color: rgba(105, 101, 101, 1);
+  border-bottom: solid 1px rgba(105, 101, 101, 1);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+#fdbox:has(#qa20-tab:checked) #qa20 {
+  display: block;
+}
+#fdbox:has(#qa20-tab:hover) label:nth-of-type(2),
+#fdbox:has(#qa20-tab:checked) label:nth-of-type(2) {
+  font-weight: bold;
+  color: rgba(105, 101, 101, 1);
+  border-bottom: solid 1px rgba(105, 101, 101, 1);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+#fdbox aside label {
+  border-bottom: solid 1px rgba(201, 196, 196, 0.7);
+  line-height: 40px;
+}
+#fdbox section {
+  width: 700px;
+  display: flex;
+  margin: 100px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+.tab-friend h2 {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 170, 0.5),
+    rgba(176, 255, 176, 0.5)
+  );
+  border-radius: 0 0 20px 20px;
+  line-height: 70px;
+  text-align: center;
+  width: 900px;
+  margin: 0 150px;
+}
+#intro img {
+  width: 500px;
+  margin-bottom: 50px;
+}
+#intro p:nth-of-type(1) {
+  width: 300px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  line-height: 50px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  background-color: rgba(210, 205, 124, 0.7);
+}
+#intro p:nth-of-type(2) {
+  width: 300px;
+  text-align: right;
+  margin-bottom: 50px;
+}
+#intro p:nth-of-type(3) {
+  color: #b5b5b5;
+}
+#qa20 h3 {
+  margin-left: 50px;
+  margin-bottom: 100px;
+}
+#qa20 .quest img {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  display: inline;
+  float: left;
+}
+#qa20 .answer img {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  display: inline;
+  float: right;
+}
+#qa20 .questex img {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  display: inline;
+  float: left;
+}
+
+#qa20 img {
+  margin: 120px 100px 50px 150px;
+  width: 600px;
+}
+#qa20 p {
+  text-align: center;
+}
+
+.quest {
+  line-height: 80px;
+  margin-bottom: 80px;
+  width: 600px;
+  background-color: yellow;
+}
+.questex {
+  line-height: 40px;
+  margin-bottom: 100px;
+  width: 600px;
+  background-color: yellow;
+}
+
+.answer {
+  justify-content: end;
+  margin-bottom: 150px;
+  text-align: right;
+}
+
+.tab-street {
+  margin: 0 150px;
+  padding: 0px 0;
+  text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.tab-street h2 {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 170, 0.5),
+    rgba(176, 255, 176, 0.5)
+  );
+  border-radius: 0 0 20px 20px;
+  line-height: 70px;
+  margin-bottom: 100px;
+}
+
+.tab-inf h2 {
+  font-family: "Gowun Dodum", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 170, 0.5),
+    rgba(176, 255, 176, 0.5)
+  );
+  border-radius: 0 0 20px 20px;
+  line-height: 70px;
+  text-align: center;
+  width: 900px;
+  margin: 0 150px;
+}
+#infbox {
+  font-family: "Gowun Dodum", sans-serif;
+  display: flex;
+}
+#infbox aside {
+  border-radius: 0 5px 5px 0;
+  margin-top: 50px;
+  padding: 20px 15px;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  color: rgba(182, 177, 177, 0.7);
+  background-color: rgba(255, 228, 196, 0.5);
+  align-content: center;
+}
+#infbox aside label {
+  border-bottom: solid 1px rgba(201, 196, 196, 0.7);
+  line-height: 40px;
+}
+#infbox section {
+  width: 700px;
+  display: flex;
+  margin: 100px;
+  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+#pre-sec,
+#road-sec,
+#traff-sec,
+#food-sec {
+  display: none;
+}
+#infbox:has(#pre:checked) #pre-sec {
+  display: block;
+}
+#infbox:has(#pre:hover) label:nth-of-type(1),
+#infbox:has(#pre:checked) label:nth-of-type(1) {
+  font-weight: bold;
+  color: rgba(105, 101, 101, 1);
+  border-bottom: solid 1px rgba(105, 101, 101, 1);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+
+#infbox:has(#road:checked) #road-sec {
+  display: block;
+}
+#infbox:has(#road:hover) label:nth-of-type(2),
+#infbox:has(#road:checked) label:nth-of-type(2) {
+  font-weight: bold;
+  color: rgba(105, 101, 101, 1);
+  border-bottom: solid 1px rgba(105, 101, 101, 1);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+#infbox:has(#traffic:checked) #traff-sec {
+  display: block;
+}
+#infbox:has(#traffic:hover) label:nth-of-type(3),
+#infbox:has(#traffic:checked) label:nth-of-type(3) {
+  font-weight: bold;
+  color: rgba(105, 101, 101, 1);
+  border-bottom: solid 1px rgba(105, 101, 101, 1);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+#infbox:has(#food:checked) #food-sec {
+  display: block;
+}
+#infbox:has(#food:hover) label:nth-of-type(4),
+#infbox:has(#food:checked) label:nth-of-type(4) {
+  font-weight: bold;
+  color: rgba(105, 101, 101, 1);
+  border-bottom: solid 1px rgba(105, 101, 101, 1);
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+}
+.tab-street {
+  font-family: "Gowun Dodum", sans-serif;
+}
+.tab-street hr {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+#stitle {
+  font-weight: bold;
+  font-size: 20px;
+}
+.tab-street h3 {
+  margin-bottom: 20px;
+}
+.tab-street h3 + p {
+  margin-bottom: 100px;
+}
+section hr {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+section img {
+  margin-right: 20px;
+  margin-bottom: 50px;
+}
+#pre-sec p {
+  margin-bottom: 180px;
+}
+#pre-sec span {
+  color: red;
+}
+#roadbox {
+  text-align: center;
+  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#roadbox p {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+#trafbox {
+  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#trafbox p {
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+#foodbox {
+  text-align: center;
+  width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#foodbox p {
+  margin-top: 50px;
+  margin-bottom: 100px;
 }

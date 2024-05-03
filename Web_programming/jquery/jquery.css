@@ -36,13 +36,7 @@ header > nav {
   height: 40px;
   overflow: hidden;
 }
-#ctime {
-  width: 250px;
-  height: 36px;
-  float: right;
-  border: 1px dashed orange;
-  border-radius: 15px;
-}
+
 .main-menu {
   display: block;
   float: left;
@@ -76,9 +70,19 @@ footer p {
   border: 1px solid black;
   margin-top: 10px;
 }
-table {
-  text-align: center;
+
+/*------------------------------------------------------*/
+
+div.out {
+  width: 300px;
+  height: 150px;
+  background-color: yellow;
 }
-tr:nth-of-type(1) {
-  background-color: gray;
+
+div.out p {
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  border: 2px solid red;
+  border-radius: 10px;
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link tyep="text/css" rel="stylesheet" href="playjs.css" />
+    <link type="text/css" rel="stylesheet" href="playjs.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Shadows+Into+Light&display=swap"
       rel="stylesheet"
     />
-
+    <title>playjs</title>
     <script src="playjs.js"></script>
   </head>
   <body>
@@ -36,7 +36,8 @@
           <input id="y" /><br />
           합계:
           <input id="sum" /><br />
-          <input type="button" value="계산" onclick="calc();" />
+          <input id="sumButton" type="button" value="계산" />
+          <!--02 ok-->
         </form>
       </div>
       <div class="lab">
@@ -73,8 +74,8 @@
         <form>
           숫자:
           <input type="text" id="user" size="5" />
-          <input type="button" value="확인" onclick="Guess();" />
-          <input type="button" value="다시시작" onclick="replay();" />
+          <input id="guessButton" type="button" value="확인" /><!--03 ok-->
+          <input id="replayButton" type="button" value="다시시작" /><!--04 ok-->
           <br /><br />
           추측횟수:
           <input type="text" id="guess" size="5" />
@@ -83,6 +84,47 @@
           <input type="text" id="random" size="16" />
         </form>
       </div>
+      <div class="lab">
+        <img id="image" src="puppy1.jpeg" height="200" style="display: block" />
+        <input id="changeButton" type="button" value="눌러보세요" />
+        <!--05 ok-->
+      </div>
+      <div class="lab">
+        <h3>색상 테이블 출력하기</h3>
+        <input type="button" id="ctCreate" value="출력하기" />
+        <!--06 ok-->
+        <input type="button" id="ctRemove" value="없애기" /><!--07 ok-->
+        <div id="colorTable"></div>
+      </div>
+      <div class="lab">
+        <div id="target">This is a Text.</div>
+        <button id="stopColor">중지</button>
+        <!--08 ok-->
+      </div>
+      <div class="lab">
+        <h3>상자 이동하기</h3>
+        <p>
+          <button id="mymove">Click Me</button>
+          <!--09 ok-->
+        </p>
+        <div id="container">
+          <div id="animate"></div>
+        </div>
+      </div>
+    </div>
+    <div id="hangman">
+      <div>
+        <img id="hangmanpic" src="hangman6.gif" alt="hangman" />
+      </div>
+      <div id="clue">Press New Game to play!</div>
+      <div>
+        <input id="hguess" type="text" size="1" maxlength="1" />
+        <button id="guessbutton" disabled="disabled">Guess</button>
+      </div>
+      <div id="newgamearea">
+        <button id="newgameButton">New Game</button>
+      </div>
+      <div id="guessstr"></div>
     </div>
     <footer>
       <p>Web Programming, Spring 2024</p>
